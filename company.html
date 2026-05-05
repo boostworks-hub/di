@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>会社概要 | 株式会社ディーアイ</title>
+<meta name="description" content="株式会社ディーアイの会社概要。埼玉県越谷市大間野町。建築板金工事。代表：伊藤大助。埼玉県知事許可 第075648号。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#FF6B1A;--orange-dark:#D45200;--black:#111111;--dark:#1A1A1A;--dark2:#222222;--sepia:#8B6914;--sepia-light:#C49A2A;--white:#FFFFFF;--gray:#888888;--border:#333333;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(17,17,17,0.95);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px;backdrop-filter:blur(8px);}
+.logo{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:2px;color:var(--white);display:flex;flex-direction:column;line-height:1.1;}
+.logo span{font-size:10px;letter-spacing:4px;color:var(--orange);font-family:'Noto Sans JP',sans-serif;}
+nav{display:flex;gap:28px;align-items:center;}
+nav a{font-size:13px;letter-spacing:1px;color:var(--white);transition:color .2s;position:relative;padding-bottom:4px;}
+nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--orange);transition:width .3s;}
+nav a:hover{color:var(--orange);}
+nav a:hover::after{width:100%;}
+nav a.active{color:var(--orange);}
+nav a.active::after{width:100%;}
+.header-right{display:flex;align-items:center;gap:16px;}
+.header-tel{font-family:'Oswald',sans-serif;font-size:18px;color:var(--orange);}
+.btn-cta{background:var(--orange);color:var(--white);padding:10px 20px;font-size:12px;letter-spacing:1px;font-weight:700;display:inline-block;transition:background .2s;}
+.btn-cta:hover{background:var(--orange-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.hamburger span{width:24px;height:2px;background:var(--white);display:block;}
+.mobile-nav{display:none;position:fixed;top:72px;left:0;width:100%;background:rgba(17,17,17,0.98);padding:24px;flex-direction:column;gap:20px;z-index:999;border-bottom:2px solid var(--orange);}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-size:15px;padding:8px 0;border-bottom:1px solid var(--border);}
+
+/* PAGE HERO */
+.page-hero{margin-top:72px;background:linear-gradient(135deg,var(--dark2) 0%,#1a1000 60%,var(--dark2) 100%);padding:80px 40px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,107,26,0.06) 1px,transparent 1px);background-size:30px 30px;}
+.page-hero-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:6px;color:var(--orange);margin-bottom:16px;display:block;}
+.page-hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(32px,5vw,56px);font-weight:700;margin-bottom:16px;position:relative;}
+.page-hero-sub{font-size:15px;color:var(--gray);max-width:600px;margin:0 auto;line-height:1.8;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:24px;font-size:12px;color:var(--gray);position:relative;}
+.breadcrumb a{color:var(--gray);transition:color .2s;}
+.breadcrumb a:hover{color:var(--orange);}
+.breadcrumb span{color:var(--border);}
+
+.container{max-width:1200px;margin:0 auto;padding:0 40px;}
+.section-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:6px;color:var(--orange);margin-bottom:12px;display:block;}
+.section-title{font-family:'Noto Serif JP',serif;font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.4;margin-bottom:40px;}
+
+/* MESSAGE */
+.message-section{padding:96px 0;background:var(--dark);}
+.message-layout{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;}
+.message-photo{
+  position:relative;
+  aspect-ratio:3/4;
+  overflow:hidden;
+  background:var(--dark2);
+  display:flex;align-items:center;justify-content:center;
+}
+.message-photo-inner{
+  width:100%;height:100%;
+  background:linear-gradient(135deg,#1a1000,var(--dark2));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+}
+.message-photo-icon{font-size:80px;opacity:0.3;}
+.message-photo-name{font-family:'Noto Serif JP',serif;font-size:18px;color:rgba(255,255,255,0.5);}
+.message-photo::after{content:'';position:absolute;bottom:0;right:0;width:40px;height:40px;border-bottom:3px solid var(--orange);border-right:3px solid var(--orange);}
+.message-role{font-size:12px;color:var(--orange);letter-spacing:3px;margin-bottom:8px;}
+.message-name{font-family:'Noto Serif JP',serif;font-size:28px;font-weight:700;margin-bottom:32px;}
+.message-text{font-size:15px;color:rgba(255,255,255,0.85);line-height:2;margin-bottom:20px;}
+.message-sig{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--sepia-light);margin-top:32px;}
+
+/* TABLE */
+.overview-section{padding:96px 0;background:var(--black);}
+.company-table{width:100%;border-collapse:collapse;}
+.company-table tr{border-bottom:1px solid var(--border);}
+.company-table tr:first-child{border-top:1px solid var(--border);}
+.company-table th{
+  width:180px;padding:20px 24px;
+  text-align:left;font-size:13px;font-weight:700;
+  color:var(--sepia-light);letter-spacing:1px;
+  vertical-align:top;
+  background:var(--dark2);
+}
+.company-table td{
+  padding:20px 24px;font-size:14px;
+  color:rgba(255,255,255,0.85);line-height:1.8;
+}
+
+/* MAP */
+.map-section{padding:96px 0;background:var(--dark);}
+.map-wrap{
+  margin-top:40px;position:relative;
+  aspect-ratio:16/6;overflow:hidden;
+}
+.map-wrap iframe{width:100%;height:100%;border:0;filter:invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.1);}
+.map-info{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  margin-top:32px;
+}
+.map-info-item{
+  background:var(--dark2);padding:20px 24px;
+  border-left:3px solid var(--orange);
+}
+.map-info-label{font-size:11px;color:var(--orange);letter-spacing:2px;margin-bottom:6px;}
+.map-info-value{font-size:14px;color:var(--white);line-height:1.6;}
+
+/* CTA STRIP */
+.cta-strip{background:var(--orange);padding:48px 40px;text-align:center;}
+.cta-strip-title{font-family:'Noto Serif JP',serif;font-size:clamp(20px,3vw,32px);font-weight:700;color:var(--white);margin-bottom:24px;}
+.btn-white{display:inline-block;background:var(--white);color:var(--orange);padding:16px 48px;font-size:15px;font-weight:700;letter-spacing:2px;transition:all .3s;}
+.btn-white:hover{background:var(--black);color:var(--white);}
+
+/* FOOTER */
+footer{background:#0A0A0A;padding:64px 0 32px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-desc{font-size:13px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+.footer-address{font-size:12px;color:rgba(255,255,255,0.5);}
+.footer-heading{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:3px;color:var(--orange);margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:10px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:13px;color:var(--gray);transition:color .2s;}
+.footer-links a:hover{color:var(--orange);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;}
+.footer-lic{font-size:11px;color:rgba(255,255,255,0.3);}
+
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  header{padding:0 20px;}
+  nav{display:none;}
+  .header-right .header-tel{display:none;}
+  .hamburger{display:flex;}
+  .message-layout{grid-template-columns:1fr;}
+  .company-table th{width:120px;padding:16px;}
+  .company-table td{padding:16px;}
+  .map-info{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .container{padding:0 20px;}
+  .page-hero{padding:60px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo">D.I CORPORATION<span>株式会社ディーアイ</span></a>
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="service.html">施工案内</a>
+    <a href="works.html">施工実績</a>
+    <a href="company.html" class="active">会社概要</a>
+    <a href="recruit.html">採用情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="header-right">
+    <a href="tel:0489896737" class="header-tel">048-989-6737</a>
+    <a href="contact.html" class="btn-cta">無料相談</a>
+  </div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">TOP</a>
+  <a href="service.html">施工案内</a>
+  <a href="works.html">施工実績</a>
+  <a href="company.html">会社概要</a>
+  <a href="recruit.html">採用情報</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="tel:0489896737" style="color:var(--orange);font-family:'Oswald',sans-serif;font-size:20px;">048-989-6737</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="page-hero-label">COMPANY</span>
+  <h1 class="page-hero-title">会社概要</h1>
+  <p class="page-hero-sub">株式会社ディーアイについてご紹介します。</p>
+  <div class="breadcrumb">
+    <a href="index.html">TOP</a>
+    <span>&rsaquo;</span>
+    <span>会社概要</span>
+  </div>
+</div>
+
+<!-- 代表メッセージ -->
+<section class="message-section">
+  <div class="container">
+    <span class="section-label fade-up">MESSAGE</span>
+    <h2 class="section-title fade-up">代表メッセージ</h2>
+    <div class="message-layout fade-up">
+      <div class="message-photo">
+        <div class="message-photo-inner">
+          <div class="message-photo-icon">&#128736;</div>
+          <div class="message-photo-name">代表取締役<br>伊藤 大助</div>
+        </div>
+      </div>
+      <div class="message-body">
+        <p class="message-role">代表取締役</p>
+        <h3 class="message-name">伊藤 大助</h3>
+        <p class="message-text">私たちは、建物を長く守り続けるための板金技術を一切の妥協なく追い求めています。屋根・外壁・ダクトに至るまで、職人の手仕事と確かな素材で、お客様の大切な建物を雨風から守ります。</p>
+        <p class="message-text">建築板金は、建物の機能を維持するために欠かせない仕事です。劣化した屋根や外壁を放置すれば、建物全体の寿命を縮めることになります。私たちは「早期発見・早期対処」を大切に、現場ごとに丁寧な現地調査を行い、お客様の状況に最適なご提案をしています。</p>
+        <p class="message-text">どんな小さなご相談でも、誠実にお応えすることが私たちの誇りです。埼玉県を中心に、地域の皆様の暮らしと仕事を支える建物づくりに貢献してまいります。</p>
+        <p class="message-sig">代表取締役 伊藤 大助</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 会社概要テーブル -->
+<section class="overview-section">
+  <div class="container">
+    <span class="section-label fade-up">PROFILE</span>
+    <h2 class="section-title fade-up">会社概要</h2>
+    <table class="company-table fade-up">
+      <tr>
+        <th>会社名</th>
+        <td>株式会社ディーアイ</td>
+      </tr>
+      <tr>
+        <th>英語表記</th>
+        <td>D.I CORPORATION</td>
+      </tr>
+      <tr>
+        <th>代表者</th>
+        <td>伊藤 大助（イトウ ダイスケ）</td>
+      </tr>
+      <tr>
+        <th>所在地</th>
+        <td>〒343-0844 埼玉県越谷市大間野町5丁目155番地3</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><a href="tel:0489896737" style="color:var(--orange);">048-989-6737</a></td>
+      </tr>
+      <tr>
+        <th>資本金</th>
+        <td>5,000千円</td>
+      </tr>
+      <tr>
+        <th>設立</th>
+        <td>2022年3月</td>
+      </tr>
+      <tr>
+        <th>業務内容</th>
+        <td>建築板金工事（金属屋根工事・外壁板金工事・ダクト板金工事・雨樋工事・棟板金工事 ほか）</td>
+      </tr>
+      <tr>
+        <th>建設業許可</th>
+        <td>埼玉県知事許可 第075648号（板金工事業）</td>
+      </tr>
+      <tr>
+        <th>対応エリア</th>
+        <td>埼玉県全域・東京都・近隣県（詳細はお問い合わせください）</td>
+      </tr>
+      <tr>
+        <th>営業時間</th>
+        <td>平日 8:00〜17:00 ／ 土日祝 応相談</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- アクセス・地図 -->
+<section class="map-section">
+  <div class="container">
+    <span class="section-label fade-up">ACCESS</span>
+    <h2 class="section-title fade-up">アクセス</h2>
+    <div class="map-wrap fade-up">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.8!2d139.817!3d35.862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDUxJzQ0LjMiTiAxMznCsDQ5JzAxLjIiRQ!5e0!3m2!1sja!2sjp!4v1"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="株式会社ディーアイ 地図">
+      </iframe>
+    </div>
+    <div class="map-info fade-up">
+      <div class="map-info-item">
+        <div class="map-info-label">&#128205; 所在地</div>
+        <div class="map-info-value">〒343-0844<br>埼玉県越谷市大間野町5-155-3</div>
+      </div>
+      <div class="map-info-item">
+        <div class="map-info-label">&#128222; 電話番号</div>
+        <div class="map-info-value"><a href="tel:0489896737" style="color:var(--orange);">048-989-6737</a></div>
+      </div>
+      <div class="map-info-item">
+        <div class="map-info-label">&#128336; 営業時間</div>
+        <div class="map-info-value">平日 8:00〜17:00<br>土日祝 応相談</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="container">
+    <h2 class="cta-strip-title">まずは無料現地調査・お見積もりから</h2>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:28px;font-size:15px;">どんな小さなご相談でも、お気軽にお問い合わせください。</p>
+    <a href="contact.html" class="btn-white">無料相談はこちら</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;">D.I CORPORATION<span>株式会社ディーアイ</span></div>
+        <p class="footer-desc">埼玉県越谷市を拠点に、建築板金工事を専門とする会社です。金属屋根・外壁・ダクトまでワンストップで対応いたします。</p>
+        <p class="footer-address">〒343-0844 埼玉県越谷市大間野町5-155-3<br>TEL：048-989-6737</p>
+      </div>
+      <div>
+        <div class="footer-heading">SERVICES</div>
+        <div class="footer-links">
+          <a href="service.html">金属屋根工事</a>
+          <a href="service.html">外壁板金工事</a>
+          <a href="service.html">ダクト板金工事</a>
+          <a href="service.html">雨樋交換・棟板金工事</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">MENU</div>
+        <div class="footer-links">
+          <a href="index.html">TOP</a>
+          <a href="service.html">施工案内</a>
+          <a href="works.html">施工実績</a>
+          <a href="company.html">会社概要</a>
+          <a href="recruit.html">採用情報</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2024 D.I CORPORATION All Rights Reserved.</p>
+      <p class="footer-lic">埼玉県知事許可 第075648号</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+hamburger.addEventListener('click',()=>{mobileNav.classList.toggle('open');});
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

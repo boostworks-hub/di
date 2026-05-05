@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>採用情報 | 株式会社ディーアイ</title>
+<meta name="description" content="株式会社ディーアイの採用情報。建築板金職人・施工スタッフ募集中。埼玉県越谷市。経験者・未経験者歓迎。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#FF6B1A;--orange-dark:#D45200;--black:#111111;--dark:#1A1A1A;--dark2:#222222;--sepia:#8B6914;--sepia-light:#C49A2A;--white:#FFFFFF;--gray:#888888;--border:#333333;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(17,17,17,0.95);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px;backdrop-filter:blur(8px);}
+.logo{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:2px;color:var(--white);display:flex;flex-direction:column;line-height:1.1;}
+.logo span{font-size:10px;letter-spacing:4px;color:var(--orange);font-family:'Noto Sans JP',sans-serif;}
+nav{display:flex;gap:28px;align-items:center;}
+nav a{font-size:13px;letter-spacing:1px;color:var(--white);transition:color .2s;position:relative;padding-bottom:4px;}
+nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--orange);transition:width .3s;}
+nav a:hover{color:var(--orange);}
+nav a:hover::after{width:100%;}
+nav a.active{color:var(--orange);}
+nav a.active::after{width:100%;}
+.header-right{display:flex;align-items:center;gap:16px;}
+.header-tel{font-family:'Oswald',sans-serif;font-size:18px;color:var(--orange);}
+.btn-cta{background:var(--orange);color:var(--white);padding:10px 20px;font-size:12px;letter-spacing:1px;font-weight:700;display:inline-block;transition:background .2s;}
+.btn-cta:hover{background:var(--orange-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.hamburger span{width:24px;height:2px;background:var(--white);display:block;}
+.mobile-nav{display:none;position:fixed;top:72px;left:0;width:100%;background:rgba(17,17,17,0.98);padding:24px;flex-direction:column;gap:20px;z-index:999;border-bottom:2px solid var(--orange);}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-size:15px;padding:8px 0;border-bottom:1px solid var(--border);}
+
+/* PAGE HERO */
+.page-hero{margin-top:72px;background:linear-gradient(135deg,var(--dark2) 0%,#1a1000 60%,var(--dark2) 100%);padding:80px 40px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,107,26,0.06) 1px,transparent 1px);background-size:30px 30px;}
+.page-hero-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:6px;color:var(--orange);margin-bottom:16px;display:block;}
+.page-hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(32px,5vw,56px);font-weight:700;margin-bottom:16px;position:relative;}
+.page-hero-sub{font-size:15px;color:var(--gray);max-width:600px;margin:0 auto;line-height:1.8;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:24px;font-size:12px;color:var(--gray);position:relative;}
+.breadcrumb a{color:var(--gray);}
+.breadcrumb a:hover{color:var(--orange);}
+.breadcrumb span{color:var(--border);}
+
+.container{max-width:1200px;margin:0 auto;padding:0 40px;}
+.section-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:6px;color:var(--orange);margin-bottom:12px;display:block;}
+.section-title{font-family:'Noto Serif JP',serif;font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.4;margin-bottom:40px;}
+
+/* APPEAL */
+.appeal-section{padding:96px 0;background:var(--dark);}
+.appeal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0;}
+.appeal-card{
+  background:var(--dark2);padding:40px 32px;
+  border-top:3px solid transparent;transition:all .3s;
+}
+.appeal-card:hover{border-top-color:var(--orange);background:#252525;}
+.appeal-num{font-family:'Oswald',sans-serif;font-size:60px;font-weight:700;color:rgba(255,107,26,0.1);line-height:1;margin-bottom:16px;}
+.appeal-icon{font-size:36px;margin-bottom:16px;}
+.appeal-title{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;margin-bottom:12px;color:var(--white);}
+.appeal-text{font-size:14px;color:var(--gray);line-height:1.8;}
+
+/* VOICE */
+.voice-section{padding:96px 0;background:var(--black);}
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:0;}
+.voice-card{
+  background:var(--dark2);padding:32px;
+  border-radius:0;position:relative;
+  border-bottom:3px solid var(--border);transition:border-color .3s;
+}
+.voice-card:hover{border-bottom-color:var(--orange);}
+.voice-card::before{
+  content:'\201C';
+  font-family:Georgia,serif;font-size:80px;
+  color:rgba(255,107,26,0.15);
+  position:absolute;top:8px;left:20px;line-height:1;
+}
+.voice-text{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.9;margin-bottom:24px;position:relative;z-index:1;}
+.voice-name{font-size:13px;color:var(--sepia-light);font-weight:700;}
+.voice-role{font-size:11px;color:var(--gray);margin-top:4px;}
+
+/* JOB TABLE */
+.job-section{padding:96px 0;background:var(--dark);}
+.job-table{width:100%;border-collapse:collapse;}
+.job-table tr{border-bottom:1px solid var(--border);}
+.job-table tr:first-child{border-top:1px solid var(--border);}
+.job-table th{width:180px;padding:20px 24px;text-align:left;font-size:13px;font-weight:700;color:var(--sepia-light);letter-spacing:1px;vertical-align:top;background:var(--dark2);}
+.job-table td{padding:20px 24px;font-size:14px;color:rgba(255,255,255,0.85);line-height:1.8;}
+.job-tag{display:inline-block;background:rgba(255,107,26,0.15);border:1px solid var(--orange);color:var(--orange);font-size:11px;padding:2px 10px;margin-right:6px;margin-bottom:4px;}
+
+/* FLOW */
+.flow-section{padding:96px 0;background:var(--black);}
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:0;position:relative;}
+.flow-grid::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--orange),var(--sepia),var(--orange));z-index:0;}
+.flow-step{text-align:center;padding:0 16px;position:relative;z-index:1;}
+.flow-num{width:72px;height:72px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;border:3px solid var(--orange-dark);}
+.flow-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;margin-bottom:8px;color:var(--white);}
+.flow-text{font-size:13px;color:var(--gray);line-height:1.6;}
+
+/* CTA */
+.cta-section{
+  background:linear-gradient(135deg,var(--dark2) 0%,#1a1000 50%,var(--dark2) 100%);
+  padding:96px 0;text-align:center;
+  border-top:1px solid var(--border);
+}
+.cta-title{font-family:'Noto Serif JP',serif;font-size:clamp(24px,4vw,40px);font-weight:700;margin-bottom:16px;}
+.cta-sub{font-size:15px;color:var(--gray);margin-bottom:40px;line-height:1.8;}
+.btn-primary{background:var(--orange);color:var(--white);padding:16px 48px;font-size:15px;font-weight:700;letter-spacing:2px;display:inline-block;transition:all .3s;}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:#0A0A0A;padding:64px 0 32px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-desc{font-size:13px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+.footer-address{font-size:12px;color:rgba(255,255,255,0.5);}
+.footer-heading{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:3px;color:var(--orange);margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:10px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:13px;color:var(--gray);transition:color .2s;}
+.footer-links a:hover{color:var(--orange);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;}
+.footer-lic{font-size:11px;color:rgba(255,255,255,0.3);}
+
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  header{padding:0 20px;}
+  nav{display:none;}
+  .header-right .header-tel{display:none;}
+  .hamburger{display:flex;}
+  .appeal-grid{grid-template-columns:1fr;}
+  .voice-grid{grid-template-columns:1fr;}
+  .flow-grid{grid-template-columns:repeat(2,1fr);gap:32px;}
+  .flow-grid::before{display:none;}
+  .job-table th{width:120px;padding:14px;}
+  .job-table td{padding:14px;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .container{padding:0 20px;}
+  .page-hero{padding:60px 20px;}
+  .flow-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo">D.I CORPORATION<span>株式会社ディーアイ</span></a>
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="service.html">施工案内</a>
+    <a href="works.html">施工実績</a>
+    <a href="company.html">会社概要</a>
+    <a href="recruit.html" class="active">採用情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="header-right">
+    <a href="tel:0489896737" class="header-tel">048-989-6737</a>
+    <a href="contact.html" class="btn-cta">無料相談</a>
+  </div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">TOP</a>
+  <a href="service.html">施工案内</a>
+  <a href="works.html">施工実績</a>
+  <a href="company.html">会社概要</a>
+  <a href="recruit.html">採用情報</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="tel:0489896737" style="color:var(--orange);font-family:'Oswald',sans-serif;font-size:20px;">048-989-6737</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="page-hero-label">RECRUIT</span>
+  <h1 class="page-hero-title">採用情報</h1>
+  <p class="page-hero-sub">職人として、共に建物を守る仲間を募集しています。経験者・未経験者、どちらも歓迎しています。</p>
+  <div class="breadcrumb">
+    <a href="index.html">TOP</a>
+    <span>&rsaquo;</span>
+    <span>採用情報</span>
+  </div>
+</div>
+
+<!-- 働く魅力 -->
+<section class="appeal-section">
+  <div class="container">
+    <span class="section-label fade-up">APPEAL</span>
+    <h2 class="section-title fade-up">働く<strong style="color:var(--orange);">魅力</strong></h2>
+    <div class="appeal-grid">
+      <div class="appeal-card fade-up">
+        <div class="appeal-num">01</div>
+        <div class="appeal-icon">&#128736;</div>
+        <h3 class="appeal-title">手に職をつけられる</h3>
+        <p class="appeal-text">建築板金は一度身につければ長く活かせる技術です。未経験からでも先輩職人が丁寧に指導し、確かなスキルを習得できます。資格取得支援制度もあります。</p>
+      </div>
+      <div class="appeal-card fade-up">
+        <div class="appeal-num">02</div>
+        <div class="appeal-icon">&#128176;</div>
+        <h3 class="appeal-title">安定した収入と待遇</h3>
+        <p class="appeal-text">建築板金の需要は安定しており、季節を問わず仕事があります。経験・スキルに応じた給与体系で、やる気次第でしっかり稼ぐことができます。各種社会保険完備。</p>
+      </div>
+      <div class="appeal-card fade-up">
+        <div class="appeal-num">03</div>
+        <div class="appeal-icon">&#127758;</div>
+        <h3 class="appeal-title">やりがいのある仕事</h3>
+        <p class="appeal-text">施工した建物が長年にわたって雨風から人々を守り続けます。完工後の達成感は格別で、地域の街並みを自分の手で作り上げる誇りある仕事です。</p>
+      </div>
+      <div class="appeal-card fade-up">
+        <div class="appeal-num">04</div>
+        <div class="appeal-icon">&#129309;</div>
+        <h3 class="appeal-title">チームワークを大切に</h3>
+        <p class="appeal-text">少数精鋭のチームで、一人ひとりが責任を持って仕事に取り組んでいます。コミュニケーションを大切にした職場環境で、困ったときは皆でサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- スタッフの声 -->
+<section class="voice-section">
+  <div class="container">
+    <span class="section-label fade-up">VOICE</span>
+    <h2 class="section-title fade-up">スタッフの声</h2>
+    <div class="voice-grid">
+      <div class="voice-card fade-up">
+        <p class="voice-text">未経験から入社して3年が経ちました。最初は不安でしたが、先輩方が丁寧に教えてくれたおかげで、今では一人前の職人として現場を任せてもらえるようになりました。手に職がついたことが自信につながっています。</p>
+        <div class="voice-name">A.S（仮名）</div>
+        <div class="voice-role">板金職人 / 入社3年目</div>
+      </div>
+      <div class="voice-card fade-up">
+        <p class="voice-text">前職は全く別の業種でしたが、ものづくりが好きで転職しました。最初は覚えることが多くて大変でしたが、施工が完成したときの達成感が毎回あって、この仕事を選んで良かったと感じています。</p>
+        <div class="voice-name">T.K（仮名）</div>
+        <div class="voice-role">板金職人 / 入社2年目</div>
+      </div>
+      <div class="voice-card fade-up">
+        <p class="voice-text">現場仕事ですが、チームの雰囲気がよく働きやすいです。困ったときにすぐ相談できる環境と、仕事に対してのみんなの真摯な姿勢が好きです。資格も会社が支援してくれて助かっています。</p>
+        <div class="voice-name">R.M（仮名）</div>
+        <div class="voice-role">施工スタッフ / 入社4年目</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 求人詳細テーブル -->
+<section class="job-section">
+  <div class="container">
+    <span class="section-label fade-up">JOB DETAILS</span>
+    <h2 class="section-title fade-up">求人詳細</h2>
+    <table class="job-table fade-up">
+      <tr>
+        <th>職種</th>
+        <td>
+          <span class="job-tag">板金職人</span>
+          <span class="job-tag">施工スタッフ</span>
+          <br>建築板金工事全般（金属屋根・外壁・ダクト・雨樋工事 ほか）
+        </td>
+      </tr>
+      <tr>
+        <th>雇用形態</th>
+        <td>正社員（試用期間3ヶ月）</td>
+      </tr>
+      <tr>
+        <th>給与</th>
+        <td>月給 230,000円〜350,000円（経験・スキルにより優遇）<br>※試用期間中も同条件</td>
+      </tr>
+      <tr>
+        <th>勤務時間</th>
+        <td>8:00〜17:00（実働8時間）<br>時間外手当あり</td>
+      </tr>
+      <tr>
+        <th>休日・休暇</th>
+        <td>日曜日・祝日、年末年始、夏季休暇<br>有給休暇（入社6ヶ月後より付与）</td>
+      </tr>
+      <tr>
+        <th>勤務地</th>
+        <td>埼玉県越谷市大間野町5-155-3（本社）および各現場</td>
+      </tr>
+      <tr>
+        <th>待遇・福利厚生</th>
+        <td>各種社会保険完備（健康保険・厚生年金・雇用保険・労災保険）<br>交通費支給・制服支給・工具貸与・資格取得支援</td>
+      </tr>
+      <tr>
+        <th>応募資格</th>
+        <td>経験者・未経験者いずれも歓迎<br>要普通自動車免許（AT限定可）<br>建築板金に興味がある方、ものづくりが好きな方</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- 応募の流れ -->
+<section class="flow-section">
+  <div class="container">
+    <span class="section-label fade-up">HOW TO APPLY</span>
+    <h2 class="section-title fade-up">応募の<strong style="color:var(--orange);">流れ</strong></h2>
+    <div class="flow-grid">
+      <div class="flow-step fade-up">
+        <div class="flow-num">01</div>
+        <h3 class="flow-title">お問い合わせ・応募</h3>
+        <p class="flow-text">電話またはお問い合わせフォームよりご連絡ください。</p>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-num">02</div>
+        <h3 class="flow-title">書類選考</h3>
+        <p class="flow-text">履歴書をご送付ください。1週間以内に結果をご連絡します。</p>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-num">03</div>
+        <h3 class="flow-title">面接</h3>
+        <p class="flow-text">本社にてお話を伺います。現場見学もご希望によりご案内します。</p>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-num">04</div>
+        <h3 class="flow-title">内定・入社</h3>
+        <p class="flow-text">入社日は相談の上、柔軟に対応いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 応募CTA -->
+<div class="cta-section">
+  <div class="container">
+    <span class="section-label" style="display:block;text-align:center;">CONTACT</span>
+    <h2 class="cta-title" style="text-align:center;">まずはお気軽に<br><strong style="color:var(--orange);">ご連絡</strong>ください</h2>
+    <p class="cta-sub" style="text-align:center;">「話を聞いてみたい」という段階でも大歓迎です。<br>お気軽にお問い合わせください。</p>
+    <div style="text-align:center;">
+      <a href="contact.html" class="btn-primary">応募・お問い合わせはこちら</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;">D.I CORPORATION<span>株式会社ディーアイ</span></div>
+        <p class="footer-desc">埼玉県越谷市を拠点に、建築板金工事を専門とする会社です。金属屋根・外壁・ダクトまでワンストップで対応いたします。</p>
+        <p class="footer-address">〒343-0844 埼玉県越谷市大間野町5-155-3<br>TEL：048-989-6737</p>
+      </div>
+      <div>
+        <div class="footer-heading">SERVICES</div>
+        <div class="footer-links">
+          <a href="service.html">金属屋根工事</a>
+          <a href="service.html">外壁板金工事</a>
+          <a href="service.html">ダクト板金工事</a>
+          <a href="service.html">雨樋交換・棟板金工事</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">MENU</div>
+        <div class="footer-links">
+          <a href="index.html">TOP</a>
+          <a href="service.html">施工案内</a>
+          <a href="works.html">施工実績</a>
+          <a href="company.html">会社概要</a>
+          <a href="recruit.html">採用情報</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2024 D.I CORPORATION All Rights Reserved.</p>
+      <p class="footer-lic">埼玉県知事許可 第075648号</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+hamburger.addEventListener('click',()=>{mobileNav.classList.toggle('open');});
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

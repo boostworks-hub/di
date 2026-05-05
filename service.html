@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>施工案内 | 株式会社ディーアイ</title>
+<meta name="description" content="株式会社ディーアイの施工案内。金属屋根工事・外壁板金工事・ダクト板金工事・雨樋交換工事など建築板金全般に対応。埼玉県越谷市。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#FF6B1A;--orange-dark:#D45200;--black:#111111;--dark:#1A1A1A;--dark2:#222222;--sepia:#8B6914;--sepia-light:#C49A2A;--white:#FFFFFF;--gray:#888888;--border:#333333;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(17,17,17,0.95);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px;backdrop-filter:blur(8px);}
+.logo{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:2px;color:var(--white);display:flex;flex-direction:column;line-height:1.1;}
+.logo span{font-size:10px;letter-spacing:4px;color:var(--orange);font-family:'Noto Sans JP',sans-serif;}
+nav{display:flex;gap:28px;align-items:center;}
+nav a{font-size:13px;letter-spacing:1px;color:var(--white);transition:color .2s;position:relative;padding-bottom:4px;}
+nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--orange);transition:width .3s;}
+nav a:hover{color:var(--orange);}
+nav a:hover::after{width:100%;}
+nav a.active{color:var(--orange);}
+nav a.active::after{width:100%;}
+.header-right{display:flex;align-items:center;gap:16px;}
+.header-tel{font-family:'Oswald',sans-serif;font-size:18px;color:var(--orange);}
+.btn-cta{background:var(--orange);color:var(--white);padding:10px 20px;font-size:12px;letter-spacing:1px;font-weight:700;border:none;cursor:pointer;transition:background .2s;display:inline-block;}
+.btn-cta:hover{background:var(--orange-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.hamburger span{width:24px;height:2px;background:var(--white);display:block;}
+.mobile-nav{display:none;position:fixed;top:72px;left:0;width:100%;background:rgba(17,17,17,0.98);padding:24px;flex-direction:column;gap:20px;z-index:999;border-bottom:2px solid var(--orange);}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-size:15px;padding:8px 0;border-bottom:1px solid var(--border);}
+
+/* PAGE HERO */
+.page-hero{
+  margin-top:72px;
+  background:linear-gradient(135deg,var(--dark2) 0%,#1a1000 60%,var(--dark2) 100%);
+  padding:80px 40px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,107,26,0.06) 1px,transparent 1px);
+  background-size:30px 30px;
+}
+.page-hero-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:6px;color:var(--orange);margin-bottom:16px;display:block;}
+.page-hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(32px,5vw,56px);font-weight:700;margin-bottom:16px;position:relative;}
+.page-hero-sub{font-size:15px;color:var(--gray);max-width:600px;margin:0 auto;line-height:1.8;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:24px;font-size:12px;color:var(--gray);position:relative;}
+.breadcrumb a{color:var(--gray);transition:color .2s;}
+.breadcrumb a:hover{color:var(--orange);}
+.breadcrumb span{color:var(--border);}
+
+/* SERVICE BLOCKS */
+.service-block{padding:96px 0;}
+.service-block.dark{background:var(--dark);}
+.service-block.black{background:var(--black);}
+.container{max-width:1200px;margin:0 auto;padding:0 40px;}
+
+.service-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.service-layout.reverse{direction:rtl;}
+.service-layout.reverse > *{direction:ltr;}
+
+.service-img-wrap{
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:hidden;
+}
+.service-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s ease;
+}
+.service-img-wrap:hover img{transform:scale(1.05);}
+.service-img-wrap::after{
+  content:'';position:absolute;
+  bottom:0;right:0;
+  width:40px;height:40px;
+  border-bottom:3px solid var(--orange);
+  border-right:3px solid var(--orange);
+}
+
+.service-content-label{
+  font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:6px;
+  color:var(--orange);margin-bottom:12px;display:block;
+}
+.service-content-title{
+  font-family:'Noto Serif JP',serif;font-size:clamp(24px,3vw,36px);
+  font-weight:700;line-height:1.4;margin-bottom:20px;
+}
+.service-content-desc{font-size:15px;color:var(--gray);line-height:1.9;margin-bottom:28px;}
+.service-features{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+.service-feature-item{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:14px;color:rgba(255,255,255,0.85);
+}
+.service-feature-item::before{
+  content:'';width:6px;height:6px;
+  background:var(--orange);border-radius:50%;
+  flex-shrink:0;margin-top:6px;
+}
+.service-price{
+  background:var(--dark2);border-left:3px solid var(--sepia-light);
+  padding:16px 20px;margin-bottom:28px;
+}
+.service-price-label{font-size:11px;color:var(--sepia-light);letter-spacing:2px;margin-bottom:4px;}
+.service-price-value{font-family:'Oswald',sans-serif;font-size:20px;color:var(--white);}
+.btn-outline{
+  display:inline-block;border:1px solid var(--orange);
+  color:var(--orange);padding:12px 32px;
+  font-size:13px;letter-spacing:2px;font-weight:700;
+  transition:all .3s;
+}
+.btn-outline:hover{background:var(--orange);color:var(--white);}
+
+/* CTA STRIP */
+.cta-strip{
+  background:var(--orange);padding:48px 40px;text-align:center;
+}
+.cta-strip-title{
+  font-family:'Noto Serif JP',serif;font-size:clamp(20px,3vw,32px);
+  font-weight:700;color:var(--white);margin-bottom:24px;
+}
+.btn-white{
+  display:inline-block;background:var(--white);color:var(--orange);
+  padding:16px 48px;font-size:15px;font-weight:700;letter-spacing:2px;
+  transition:all .3s;
+}
+.btn-white:hover{background:var(--black);color:var(--white);}
+
+/* FOOTER */
+footer{background:#0A0A0A;padding:64px 0 32px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-desc{font-size:13px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+.footer-address{font-size:12px;color:rgba(255,255,255,0.5);}
+.footer-heading{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:3px;color:var(--orange);margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:10px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:13px;color:var(--gray);transition:color .2s;}
+.footer-links a:hover{color:var(--orange);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;}
+.footer-lic{font-size:11px;color:rgba(255,255,255,0.3);}
+
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  header{padding:0 20px;}
+  nav{display:none;}
+  .header-right .header-tel{display:none;}
+  .hamburger{display:flex;}
+  .service-layout{grid-template-columns:1fr;}
+  .service-layout.reverse{direction:ltr;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .container{padding:0 20px;}
+  .page-hero{padding:60px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo">D.I CORPORATION<span>株式会社ディーアイ</span></a>
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="service.html" class="active">施工案内</a>
+    <a href="works.html">施工実績</a>
+    <a href="company.html">会社概要</a>
+    <a href="recruit.html">採用情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="header-right">
+    <a href="tel:0489896737" class="header-tel">048-989-6737</a>
+    <a href="contact.html" class="btn-cta">無料相談</a>
+  </div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">TOP</a>
+  <a href="service.html">施工案内</a>
+  <a href="works.html">施工実績</a>
+  <a href="company.html">会社概要</a>
+  <a href="recruit.html">採用情報</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="tel:0489896737" style="color:var(--orange);font-family:'Oswald',sans-serif;font-size:20px;">048-989-6737</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="page-hero-label">SERVICES</span>
+  <h1 class="page-hero-title">施工案内</h1>
+  <p class="page-hero-sub">建築板金に関わるあらゆる工事に対応しております。現地調査・お見積もり無料です。</p>
+  <div class="breadcrumb">
+    <a href="index.html">TOP</a>
+    <span>&rsaquo;</span>
+    <span>施工案内</span>
+  </div>
+</div>
+
+<!-- SERVICE 01: 金属屋根工事 -->
+<div class="service-block black" id="roof">
+  <div class="container">
+    <div class="service-layout fade-up">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="金属屋根工事">
+      </div>
+      <div class="service-content">
+        <span class="service-content-label">SERVICE 01</span>
+        <h2 class="service-content-title">金属屋根工事</h2>
+        <p class="service-content-desc">ガルバリウム鋼板・ステンレス・銅板など各種金属屋根材の新設・葺き替え工事を行います。金属屋根は軽量で耐久性が高く、デザイン性にも優れています。雨漏りに強い特性があり、住宅から工場・倉庫まで幅広く対応しています。</p>
+        <div class="service-features">
+          <div class="service-feature-item">ガルバリウム鋼板・ステンレス・銅板など各種素材に対応</div>
+          <div class="service-feature-item">屋根の新設・葺き替え・重ね葺きすべてに対応</div>
+          <div class="service-feature-item">住宅・店舗・工場・倉庫など用途を問わず施工可能</div>
+          <div class="service-feature-item">施工後のアフターフォロー・保証制度あり</div>
+        </div>
+        <div class="service-price">
+          <div class="service-price-label">料金目安</div>
+          <div class="service-price-value">現地調査後にお見積もり（無料）</div>
+        </div>
+        <a href="contact.html" class="btn-outline">無料現地調査を依頼</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE 02: 外壁板金工事 -->
+<div class="service-block dark" id="wall">
+  <div class="container">
+    <div class="service-layout reverse fade-up">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="外壁板金工事">
+      </div>
+      <div class="service-content">
+        <span class="service-content-label">SERVICE 02</span>
+        <h2 class="service-content-title">外壁板金工事<br><small style="font-size:0.6em;color:var(--gray);">角波・金属サイディング</small></h2>
+        <p class="service-content-desc">角波サイディングや金属系サイディングボードを用いた外壁の張り替え・新設工事です。工場で加工・板金してから現場へ搬入するため少ない工程で施工でき、軽量で建物への負荷が少なく耐震性にも優れています。</p>
+        <div class="service-features">
+          <div class="service-feature-item">角波サイディング・金属系サイディングボードに対応</div>
+          <div class="service-feature-item">工場・倉庫・店舗・住宅の外壁工事全般</div>
+          <div class="service-feature-item">軽量素材で耐震性に優れ、建物への負荷が少ない</div>
+          <div class="service-feature-item">コストパフォーマンスと意匠性を両立した施工</div>
+        </div>
+        <div class="service-price">
+          <div class="service-price-label">料金目安</div>
+          <div class="service-price-value">現地調査後にお見積もり（無料）</div>
+        </div>
+        <a href="contact.html" class="btn-outline">無料現地調査を依頼</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE 03: ダクト板金工事 -->
+<div class="service-block black" id="duct">
+  <div class="container">
+    <div class="service-layout fade-up">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="ダクト板金工事">
+      </div>
+      <div class="service-content">
+        <span class="service-content-label">SERVICE 03</span>
+        <h2 class="service-content-title">ダクト板金工事</h2>
+        <p class="service-content-desc">空調設備の換気経路を確保するための配管やダクトを板金加工し、取り付け工事を行います。用途に応じてグラスウール・亜鉛鉄板・ステンレスなど最適な素材を選定します。工場・オフィス・商業施設など幅広い現場に対応しています。</p>
+        <div class="service-features">
+          <div class="service-feature-item">グラスウール・亜鉛鉄板・ステンレスなど素材の選定から対応</div>
+          <div class="service-feature-item">給排気ダクト・空調配管の新設・修繕</div>
+          <div class="service-feature-item">工場・オフィス・商業施設など用途を問わず対応</div>
+          <div class="service-feature-item">施工後のメンテナンスにも迅速に対応</div>
+        </div>
+        <div class="service-price">
+          <div class="service-price-label">料金目安</div>
+          <div class="service-price-value">現地調査後にお見積もり（無料）</div>
+        </div>
+        <a href="contact.html" class="btn-outline">無料現地調査を依頼</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE 04: 雨樋交換・棟板金工事 -->
+<div class="service-block dark" id="gutter">
+  <div class="container">
+    <div class="service-layout reverse fade-up">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1590725121839-892b458a74fe?w=800&q=80" alt="雨樋交換・棟板金工事">
+      </div>
+      <div class="service-content">
+        <span class="service-content-label">SERVICE 04</span>
+        <h2 class="service-content-title">雨樋交換・<br>棟板金工事</h2>
+        <p class="service-content-desc">劣化した雨樋や棟板金を適切に交換し、雨水の建物内侵入を防止します。雨樋は雨水を排水溝へ誘導し建物を守る重要な部材です。棟板金はスレート屋根の接合部を覆う金属板で、劣化放置は雨漏りの原因となります。早期対処が費用を抑えるポイントです。</p>
+        <div class="service-features">
+          <div class="service-feature-item">既存雨樋の取り外し・補修・新設まで一貫して対応</div>
+          <div class="service-feature-item">棟板金の劣化・めくれ・雨漏り修繕</div>
+          <div class="service-feature-item">劣化した貫板の交換も同時施工可能</div>
+          <div class="service-feature-item">雨漏り調査・診断も無料で実施</div>
+        </div>
+        <div class="service-price">
+          <div class="service-price-label">料金目安</div>
+          <div class="service-price-value">現地調査後にお見積もり（無料）</div>
+        </div>
+        <a href="contact.html" class="btn-outline">無料現地調査を依頼</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="container">
+    <h2 class="cta-strip-title">まずは無料現地調査・お見積もりから</h2>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:28px;font-size:15px;">どんな小さなご相談でも、お気軽にお問い合わせください。</p>
+    <a href="contact.html" class="btn-white">無料相談はこちら</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;">D.I CORPORATION<span>株式会社ディーアイ</span></div>
+        <p class="footer-desc">埼玉県越谷市を拠点に、建築板金工事を専門とする会社です。金属屋根・外壁・ダクトまでワンストップで対応いたします。</p>
+        <p class="footer-address">〒343-0844 埼玉県越谷市大間野町5-155-3<br>TEL：048-989-6737</p>
+      </div>
+      <div>
+        <div class="footer-heading">SERVICES</div>
+        <div class="footer-links">
+          <a href="#roof">金属屋根工事</a>
+          <a href="#wall">外壁板金工事</a>
+          <a href="#duct">ダクト板金工事</a>
+          <a href="#gutter">雨樋交換・棟板金工事</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">MENU</div>
+        <div class="footer-links">
+          <a href="index.html">TOP</a>
+          <a href="service.html">施工案内</a>
+          <a href="works.html">施工実績</a>
+          <a href="company.html">会社概要</a>
+          <a href="recruit.html">採用情報</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2024 D.I CORPORATION All Rights Reserved.</p>
+      <p class="footer-lic">埼玉県知事許可 第075648号</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+hamburger.addEventListener('click',()=>{mobileNav.classList.toggle('open');});
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

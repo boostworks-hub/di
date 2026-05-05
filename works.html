@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>施工実績 | 株式会社ディーアイ</title>
+<meta name="description" content="株式会社ディーアイの施工実績。金属屋根・外壁板金・ダクト・雨樋など多数の施工事例をご紹介。埼玉県越谷市の建築板金会社。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#FF6B1A;--orange-dark:#D45200;--black:#111111;--dark:#1A1A1A;--dark2:#222222;--sepia:#8B6914;--sepia-light:#C49A2A;--white:#FFFFFF;--gray:#888888;--border:#333333;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(17,17,17,0.95);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px;backdrop-filter:blur(8px);}
+.logo{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;letter-spacing:2px;color:var(--white);display:flex;flex-direction:column;line-height:1.1;}
+.logo span{font-size:10px;letter-spacing:4px;color:var(--orange);font-family:'Noto Sans JP',sans-serif;}
+nav{display:flex;gap:28px;align-items:center;}
+nav a{font-size:13px;letter-spacing:1px;color:var(--white);transition:color .2s;position:relative;padding-bottom:4px;}
+nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--orange);transition:width .3s;}
+nav a:hover{color:var(--orange);}
+nav a:hover::after{width:100%;}
+nav a.active{color:var(--orange);}
+nav a.active::after{width:100%;}
+.header-right{display:flex;align-items:center;gap:16px;}
+.header-tel{font-family:'Oswald',sans-serif;font-size:18px;color:var(--orange);}
+.btn-cta{background:var(--orange);color:var(--white);padding:10px 20px;font-size:12px;letter-spacing:1px;font-weight:700;display:inline-block;transition:background .2s;}
+.btn-cta:hover{background:var(--orange-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.hamburger span{width:24px;height:2px;background:var(--white);display:block;}
+.mobile-nav{display:none;position:fixed;top:72px;left:0;width:100%;background:rgba(17,17,17,0.98);padding:24px;flex-direction:column;gap:20px;z-index:999;border-bottom:2px solid var(--orange);}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-size:15px;padding:8px 0;border-bottom:1px solid var(--border);}
+
+/* PAGE HERO */
+.page-hero{margin-top:72px;background:linear-gradient(135deg,var(--dark2) 0%,#1a1000 60%,var(--dark2) 100%);padding:80px 40px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,107,26,0.06) 1px,transparent 1px);background-size:30px 30px;}
+.page-hero-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:6px;color:var(--orange);margin-bottom:16px;display:block;}
+.page-hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(32px,5vw,56px);font-weight:700;margin-bottom:16px;position:relative;}
+.page-hero-sub{font-size:15px;color:var(--gray);max-width:600px;margin:0 auto;line-height:1.8;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:24px;font-size:12px;color:var(--gray);position:relative;}
+.breadcrumb a{color:var(--gray);transition:color .2s;}
+.breadcrumb a:hover{color:var(--orange);}
+.breadcrumb span{color:var(--border);}
+
+/* FILTER */
+.works-section{padding:80px 0;}
+.container{max-width:1200px;margin:0 auto;padding:0 40px;}
+
+.filter-tabs{
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:48px;
+}
+.filter-tab{
+  padding:10px 24px;font-size:13px;letter-spacing:1px;
+  border:1px solid var(--border);color:var(--gray);
+  cursor:pointer;transition:all .2s;background:transparent;
+  font-family:'Noto Sans JP',sans-serif;
+}
+.filter-tab:hover{border-color:var(--orange);color:var(--orange);}
+.filter-tab.active{background:var(--orange);border-color:var(--orange);color:var(--white);}
+
+/* WORKS GRID */
+.works-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.work-card{
+  position:relative;overflow:hidden;
+  aspect-ratio:4/3;cursor:pointer;
+  display:block;
+}
+.work-card.hidden{display:none;}
+.work-img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.work-card:hover .work-img{transform:scale(1.08);}
+.work-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,rgba(0,0,0,0.1) 50%,transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:24px;
+}
+.work-label{
+  display:inline-block;background:var(--orange);color:var(--white);
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  padding:3px 10px;margin-bottom:8px;
+  align-self:flex-start;
+}
+.work-place{font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
+.work-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;line-height:1.4;}
+.work-desc{font-size:12px;color:rgba(255,255,255,0.7);margin-top:6px;line-height:1.6;}
+
+/* CTA STRIP */
+.cta-strip{background:var(--orange);padding:48px 40px;text-align:center;}
+.cta-strip-title{font-family:'Noto Serif JP',serif;font-size:clamp(20px,3vw,32px);font-weight:700;color:var(--white);margin-bottom:24px;}
+.btn-white{display:inline-block;background:var(--white);color:var(--orange);padding:16px 48px;font-size:15px;font-weight:700;letter-spacing:2px;transition:all .3s;}
+.btn-white:hover{background:var(--black);color:var(--white);}
+
+/* FOOTER */
+footer{background:#0A0A0A;padding:64px 0 32px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-desc{font-size:13px;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+.footer-address{font-size:12px;color:rgba(255,255,255,0.5);}
+.footer-heading{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:3px;color:var(--orange);margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:10px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:13px;color:var(--gray);transition:color .2s;}
+.footer-links a:hover{color:var(--orange);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;}
+.footer-lic{font-size:11px;color:rgba(255,255,255,0.3);}
+
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  header{padding:0 20px;}
+  nav{display:none;}
+  .header-right .header-tel{display:none;}
+  .hamburger{display:flex;}
+  .works-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .container{padding:0 20px;}
+  .page-hero{padding:60px 20px;}
+  .works-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo">D.I CORPORATION<span>株式会社ディーアイ</span></a>
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="service.html">施工案内</a>
+    <a href="works.html" class="active">施工実績</a>
+    <a href="company.html">会社概要</a>
+    <a href="recruit.html">採用情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="header-right">
+    <a href="tel:0489896737" class="header-tel">048-989-6737</a>
+    <a href="contact.html" class="btn-cta">無料相談</a>
+  </div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">TOP</a>
+  <a href="service.html">施工案内</a>
+  <a href="works.html">施工実績</a>
+  <a href="company.html">会社概要</a>
+  <a href="recruit.html">採用情報</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="tel:0489896737" style="color:var(--orange);font-family:'Oswald',sans-serif;font-size:20px;">048-989-6737</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="page-hero-label">WORKS</span>
+  <h1 class="page-hero-title">施工実績</h1>
+  <p class="page-hero-sub">これまでに手がけた施工事例の一部をご紹介します。どんな現場でも誠実に、丁寧な仕事を心がけています。</p>
+  <div class="breadcrumb">
+    <a href="index.html">TOP</a>
+    <span>&rsaquo;</span>
+    <span>施工実績</span>
+  </div>
+</div>
+
+<!-- WORKS -->
+<section class="works-section">
+  <div class="container">
+    <!-- フィルタータブ -->
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">すべて</button>
+      <button class="filter-tab" data-filter="roof">金属屋根工事</button>
+      <button class="filter-tab" data-filter="wall">外壁板金工事</button>
+      <button class="filter-tab" data-filter="duct">ダクト板金工事</button>
+      <button class="filter-tab" data-filter="gutter">雨樋・棟板金工事</button>
+    </div>
+
+    <!-- 実績カードグリッド -->
+    <div class="works-grid" id="worksGrid">
+
+      <div class="work-card fade-up" data-category="roof">
+        <img class="work-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="工場屋根葺き替え工事">
+        <div class="work-overlay">
+          <span class="work-label">金属屋根工事</span>
+          <div class="work-place">&#128205; 埼玉県越谷市</div>
+          <div class="work-title">工場屋根の金属葺き替え工事</div>
+          <div class="work-desc">老朽化した工場の折板屋根をガルバリウム鋼板で全面葺き替え。雨漏り解消と断熱性向上を実現。</div>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-category="wall">
+        <img class="work-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="外壁角波サイディング施工">
+        <div class="work-overlay">
+          <span class="work-label">外壁板金工事</span>
+          <div class="work-place">&#128205; 埼玉県草加市</div>
+          <div class="work-title">店舗外壁・角波サイディング施工</div>
+          <div class="work-desc">店舗リニューアルに伴い外壁を角波サイディングで張り替え。コストと意匠性を両立。</div>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-category="gutter">
+        <img class="work-img" src="https://images.unsplash.com/photo-1590725121839-892b458a74fe?w=800&q=80" alt="棟板金・雨樋交換工事">
+        <div class="work-overlay">
+          <span class="work-label">棟板金工事</span>
+          <div class="work-place">&#128205; 埼玉県越谷市</div>
+          <div class="work-title">マンション棟板金・雨樋交換工事</div>
+          <div class="work-desc">スレート屋根の棟板金劣化による雨漏りを修繕。雨樋も同時交換し排水機能を完全回復。</div>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-category="roof">
+        <img class="work-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="倉庫屋根工事">
+        <div class="work-overlay">
+          <span class="work-label">金属屋根工事</span>
+          <div class="work-place">&#128205; 埼玉県春日部市</div>
+          <div class="work-title">倉庫屋根の折板葺き工事</div>
+          <div class="work-desc">大型倉庫の折板屋根新設工事。耐候性の高いガルバリウム鋼板を採用し長期耐久性を確保。</div>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-category="duct">
+        <img class="work-img" src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80" alt="工場ダクト板金工事">
+        <div class="work-overlay">
+          <span class="work-label">ダクト板金工事</span>
+          <div class="work-place">&#128205; 埼玉県川口市</div>
+          <div class="work-title">工場空調ダクト新設工事</div>
+          <div class="work-desc">製造工場の空調経路確保のためのダクト新設工事。亜鉛鉄板を使用し効率的な施工を実現。</div>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-category="wall">
+        <img class="work-img" src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=800&q=80" alt="金属サイディング外壁工事">
+        <div class="work-overlay">
+          <span class="work-label">外壁板金工事</span>
+          <div class="work-place">&#128205; 埼玉県吉川市</div>
+          <div class="work-title">事務所棟・金属サイディング外壁工事</div>
+          <div class="work-desc">事務所の外壁リフォームに金属サイディングを採用。軽量で施工性が高く短工期で完成。</div>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-category="gutter">
+        <img class="work-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="住宅雨樋交換工事">
+        <div class="work-overlay">
+          <span class="work-label">雨樋工事</span>
+          <div class="work-place">&#128205; 埼玉県三郷市</div>
+          <div class="work-title">住宅雨樋の全面交換工事</div>
+          <div class="work-desc">経年劣化により破損した雨樋を全面交換。補修だけでなく取り付け部分も補強し耐久性を向上。</div>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-category="roof">
+        <img class="work-img" src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&q=80" alt="屋根カバー工法">
+        <div class="work-overlay">
+          <span class="work-label">金属屋根工事</span>
+          <div class="work-place">&#128205; 埼玉県八潮市</div>
+          <div class="work-title">戸建住宅・屋根カバー工法</div>
+          <div class="work-desc">既存スレート屋根の上からガルバリウム鋼板を重ね葺き。廃材を最小限に抑えた環境配慮型施工。</div>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-category="duct">
+        <img class="work-img" src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=800&q=80" alt="商業施設ダクト工事">
+        <div class="work-overlay">
+          <span class="work-label">ダクト板金工事</span>
+          <div class="work-place">&#128205; 埼玉県草加市</div>
+          <div class="work-title">商業施設・厨房排気ダクト工事</div>
+          <div class="work-desc">飲食店厨房の排気ダクト新設工事。ステンレス製ダクトで耐熱・耐油性能を確保。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="container">
+    <h2 class="cta-strip-title">まずは無料現地調査・お見積もりから</h2>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:28px;font-size:15px;">どんな小さなご相談でも、お気軽にお問い合わせください。</p>
+    <a href="contact.html" class="btn-white">無料相談はこちら</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px;">D.I CORPORATION<span>株式会社ディーアイ</span></div>
+        <p class="footer-desc">埼玉県越谷市を拠点に、建築板金工事を専門とする会社です。金属屋根・外壁・ダクトまでワンストップで対応いたします。</p>
+        <p class="footer-address">〒343-0844 埼玉県越谷市大間野町5-155-3<br>TEL：048-989-6737</p>
+      </div>
+      <div>
+        <div class="footer-heading">SERVICES</div>
+        <div class="footer-links">
+          <a href="service.html">金属屋根工事</a>
+          <a href="service.html">外壁板金工事</a>
+          <a href="service.html">ダクト板金工事</a>
+          <a href="service.html">雨樋交換・棟板金工事</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">MENU</div>
+        <div class="footer-links">
+          <a href="index.html">TOP</a>
+          <a href="service.html">施工案内</a>
+          <a href="works.html">施工実績</a>
+          <a href="company.html">会社概要</a>
+          <a href="recruit.html">採用情報</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2024 D.I CORPORATION All Rights Reserved.</p>
+      <p class="footer-lic">埼玉県知事許可 第075648号</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+hamburger.addEventListener('click',()=>{mobileNav.classList.toggle('open');});
+
+// フィルター
+const tabs=document.querySelectorAll('.filter-tab');
+const cards=document.querySelectorAll('.work-card');
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter=tab.dataset.filter;
+    cards.forEach(card=>{
+      if(filter==='all'||card.dataset.category===filter){
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
